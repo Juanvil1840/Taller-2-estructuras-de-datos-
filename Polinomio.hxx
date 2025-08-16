@@ -1,5 +1,6 @@
 #ifndef __POLINOMIO__HXX__
 #define __POLINOMIO__HXX__
+#include "Polinomio.h"
 
 // -------------------------------------------------------------------------
 template < class S > 
