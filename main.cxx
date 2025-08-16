@@ -6,8 +6,6 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include "Polinomio.h"
-
 
 
 // -------------------------------------------------------------------------
