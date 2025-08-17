@@ -1,6 +1,3 @@
-//Holi
-//comentario de prueba
-//segunda prueba 
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
