@@ -102,7 +102,7 @@ int main( int argc, char* argv[] )
       case 'P':
       {
         unsigned int id;
-        TScalar x;
+        TEscalar x; //Agregado por Lina perez
         tokens >> id >> x;
         std::cout
           << "Polinomio (" << id << ", " << x << ") = "
