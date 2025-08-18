@@ -38,8 +38,8 @@ class Polinomio : private std::vector< S >
 
 		void FijarCoeficiente( unsigned int grado, const S& coeficiente );
 
-		Polinomio< S >& operator+( const Polinomio< S >& der ) const;
-		Polinomio< S >& operator*( const Polinomio< S >& der ) const;
+		Polinomio< S > operator+( const Polinomio< S >& der ) const; //Agregado por Lina Perez
+		Polinomio< S > operator*( const Polinomio< S >& der ) const; //Agregado por Lina Perez
 		S operator()( const S& x ) const;
 };
 
