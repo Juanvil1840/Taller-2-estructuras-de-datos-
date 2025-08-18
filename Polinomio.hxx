@@ -37,7 +37,7 @@ Polinomio<S> Polinomio<S>::operator+( const Polinomio< S >& der ) const //Agrega
   unsigned int maxGradoDer = der.size();
   unsigned int maxGrado = std::max(maxGradoIzq, maxGradoDer);
 
-  // Ajusta el tamaño del polinomio resultado con ceros
+  // Ajusta el tamanio del polinomio resultado con ceros
   resultado.resize(maxGrado, S(0));
 
   // Suma coeficientes grado a grado
@@ -77,7 +77,7 @@ Polinomio<S> Polinomio<S>::operator*( const Polinomio< S >& der ) const //Agrega
   unsigned int maxGradoDer = der.size();
   unsigned int maxGrado = std::max(maxGradoIzq, maxGradoDer);
 
-  // Ajusta el tamaño del polinomio con el grado menor
+  // Ajusta el tamanio del polinomio con el grado menor para que se igual al otro
   Polinomio<S> auxizq = *this;
   Polinomio<S> auxder = der;
   if( maxGrado > this->size( ) ){
