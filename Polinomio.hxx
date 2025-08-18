@@ -27,7 +27,7 @@ void Polinomio<S>::FijarCoeficiente( unsigned int grado, const S& coeficiente )
 
 // -------------------------------------------------------------------------
 template < class S > 
-Polinomio<S>& Polinomio<S>::operator+( const Polinomio< S >& der ) const
+Polinomio<S> Polinomio<S>::operator+( const Polinomio< S >& der ) const //Agregado por Lina Perez
 {
   Polinomio<S> resultado;
 
@@ -38,7 +38,7 @@ Polinomio<S>& Polinomio<S>::operator+( const Polinomio< S >& der ) const
 
 // -------------------------------------------------------------------------
 template < class S > 
-Polinomio<S>& Polinomio<S>::operator*( const Polinomio< S >& der ) const
+Polinomio<S> Polinomio<S>::operator*( const Polinomio< S >& der ) const //Agregado por Lina Perez
 {
   Polinomio<S> resultado;
 
