@@ -67,10 +67,10 @@ Polinomio<S> Polinomio<S>::operator+( const Polinomio< S >& der ) const //Agrega
 template < class S > 
 Polinomio<S> Polinomio<S>::operator*( const Polinomio< S >& der ) const
 {
-  //Agregado por Lina Perez
   Polinomio<S> resultado;
 
   // TODO #2
+  //Agregado por Lina Perez
   // Encuentra el mayor grado entre los dos polinomios
   // Este sera el numero de multiplicaciones que toca hacer por cada termino en el polinomio 
   unsigned int maxGradoIzq = this->size();
