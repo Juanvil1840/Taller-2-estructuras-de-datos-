@@ -65,7 +65,7 @@ Polinomio<S> Polinomio<S>::operator+( const Polinomio< S >& der ) const //Agrega
 
 // -------------------------------------------------------------------------
 template < class S > 
-Polinomio<S> Polinomio<S>::operator*( const Polinomio< S >& der ) const
+Polinomio<S> Polinomio<S>::operator*( const Polinomio< S >& der ) const //Agregado por Lina Perez
 {
   Polinomio<S> resultado;
 
