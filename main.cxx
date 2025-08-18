@@ -36,7 +36,7 @@ int main( int argc, char* argv[] )
   // Leer la cantidad de polinomios
   std::string lineaEntr;
   std::getline( entrada, lineaEntr );
-  unsigned int nPolys = std::atoi( lineaEntr );
+  unsigned int nPolys = std::stoi( lineaEntr ); //agregado por Juan Mendoza
 
   // Leer polinomios
   for( unsigned int p = 0; p < nPolys; ++p )
@@ -54,7 +54,7 @@ int main( int argc, char* argv[] )
     std::string token;
     while( tokens >> token )
     {
-      unsigned int grado = std::atoi( token );
+      unsigned int grado = std::stoi( token ); //agregado por Juan Mendoza
       tokens >> token;
       TEscalar coeficiente = std::atof( token.c_str( ) );
 
