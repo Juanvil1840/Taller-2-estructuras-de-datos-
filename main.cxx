@@ -59,7 +59,7 @@ int main( int argc, char* argv[] )
       TEscalar coeficiente = std::atof( token.c_str( ) );
 
       // Actualizar Polinomio
-      polys[ p ]->FijarCoeficiente( grado, coeficiente );
+      polys[ p ].FijarCoeficiente( grado, coeficiente ); //Agregado por Lina perez
 
     }
     std::cout << "Entrada " << p << " = " << polys[ p ] << std::endl;
