@@ -19,7 +19,7 @@ int main( int argc, char* argv[] )
     return( 1 );
 
   }
-  std::string archEntrada = argv[ 2 ];
+  std::string archEntrada = argv[ 1 ]; // modificado por Juan Mendoza
 
   // Abrir archivo de texto
   std::ifstream entrada( archEntrada );
