@@ -65,11 +65,67 @@ Polinomio<S> Polinomio<S>::operator+( const Polinomio< S >& der ) const //Agrega
 
 // -------------------------------------------------------------------------
 template < class S > 
-Polinomio<S> Polinomio<S>::operator*( const Polinomio< S >& der ) const //Agregado por Lina Perez
+Polinomio<S> Polinomio<S>::operator*( const Polinomio< S >& der ) const
 {
   Polinomio<S> resultado;
 
   // TODO #2
+  // Encuentra el mayor grado entre los dos polinomios
+  // Este sera el numero de multiplicaciones que toca hacer por cada termino en el polinomio 
+  unsigned int maxGradoIzq = this->size();
+  unsigned int maxGradoDer = der.size();
+  unsigned int maxGrado = std::max(maxGradoIzq, maxGradoDer);
+
+  // Ajusta el tamaño del polinomio con el grado menor
+  Polinomio<S> auxizq = *this;
+  Polinomio<S> auxder = der;
+  if( maxGrado > this->size( ) ){
+    auxizq.resize( maxGrado, S( 0 ) );
+  } else {
+    auxder.resize( maxGrado, S( 0 ) );
+  }
+
+  std::vector<Polinomio<S> > multiplicacionesPorTermino;
+
+  //Primer ciclo recorre el polinomio de la izquierda
+  for(int i = 0; i < maxGrado; i++){
+
+    Polinomio <S> multiplicacion;
+
+    //Segundo ciclo recorre el polinomio de la derecha 
+    for(int j = 0; j < maxGrado; j++){ 
+      
+      if((i + j) >= multiplicacion.size() ){
+        multiplicacion.resize( (i + j) + 1 , S( 0 ) );
+      }
+
+      multiplicacion[i+j] = (auxizq[i]) * (auxder[j]);
+      
+    }
+
+    multiplicacionesPorTermino.push_back(multiplicacion);
+  }
+
+  // Establecer el grado del resultado
+  unsigned int gradoResultado = 0;
+  
+  // Recorre multiplicacionesPorTermino
+  // multiplicacionesPorTermino.size() es igual a maxGrado porque fue planeado para que asi fuera
+  for(int i = 0; i < maxGrado; i ++){
+      
+    //Encuentra el grado mas grande para todas las multiplicaciones
+    if(multiplicacionesPorTermino[i].size() > gradoResultado){
+      gradoResultado = multiplicacionesPorTermino[i].size();     
+    }
+  }
+
+  resultado.resize(gradoResultado, S(0) );
+
+  // Sumar el resultado de cada una de las multiplicaciones termino por termino
+  // Recorre multiplicacionesPorTermino
+  for(int i = 0; i < maxGrado; i ++) {
+    resultado = resultado + multiplicacionesPorTermino[i];
+  }
 
   return resultado;
 }
