@@ -137,8 +137,11 @@ S Polinomio<S>::operator()( const S& x ) const
 {
   S resultado = S( 0 );
 
-  // TODO #3
-
+  // TODO #3 Modificado por Juan Pablo 
+ for(size_t i = this->size(); i-- > 0;){
+    resultado = resultado * x + (*this)[ i ];
+  }
+  
   return resultado;
 }
 
