@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include "Polinomio.h" //Agregado por Juan Mendoza
+#include "Polinomio.h" 
 
 // -------------------------------------------------------------------------
 typedef double TEscalar;
@@ -19,7 +19,7 @@ int main( int argc, char* argv[] )
     return( 1 );
 
   }
-  std::string archEntrada = argv[ 1 ]; // modificado por Juan Mendoza
+  std::string archEntrada = argv[ 1 ]; 
 
   // Abrir archivo de texto
   std::ifstream entrada( archEntrada );
@@ -36,7 +36,7 @@ int main( int argc, char* argv[] )
   // Leer la cantidad de polinomios
   std::string lineaEntr;
   std::getline( entrada, lineaEntr );
-  unsigned int nPolys = std::stoi( lineaEntr ); //agregado por Juan Mendoza
+  unsigned int nPolys = std::stoi( lineaEntr ); 
 
   // Leer polinomios
   for( unsigned int p = 0; p < nPolys; ++p )
@@ -54,12 +54,12 @@ int main( int argc, char* argv[] )
     std::string token;
     while( tokens >> token )
     {
-      unsigned int grado = std::stoi( token ); //agregado por Juan Mendoza
+      unsigned int grado = std::stoi( token );
       tokens >> token;
       TEscalar coeficiente = std::atof( token.c_str( ) );
 
       // Actualizar Polinomio
-      polys[ p ].FijarCoeficiente( grado, coeficiente ); //Agregado por Lina perez
+      polys[ p ].FijarCoeficiente( grado, coeficiente ); 
 
     }
     std::cout << "Entrada " << p << " = " << polys[ p ] << std::endl;
