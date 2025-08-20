@@ -27,10 +27,9 @@ void Polinomio<S>::FijarCoeficiente( unsigned int grado, const S& coeficiente )
 
 // -------------------------------------------------------------------------
 template < class S > 
-Polinomio<S> Polinomio<S>::operator+( const Polinomio< S >& der ) const //Agregado por Lina Perez
+Polinomio<S> Polinomio<S>::operator+( const Polinomio< S >& der ) const 
 {
   Polinomio<S> resultado;
-  //Agregado por Juan Mendoza
   // TODO #1
   // Encuentra el mayor grado entre los dos polinomios 
   unsigned int maxGradoIzq = this->size();
@@ -65,12 +64,11 @@ Polinomio<S> Polinomio<S>::operator+( const Polinomio< S >& der ) const //Agrega
 
 // -------------------------------------------------------------------------
 template < class S > 
-Polinomio<S> Polinomio<S>::operator*( const Polinomio< S >& der ) const //Agregado por Lina Perez
+Polinomio<S> Polinomio<S>::operator*( const Polinomio< S >& der ) const 
 {
   Polinomio<S> resultado;
 
   // TODO #2
-  //Agregado por Lina Perez
   // Encuentra el mayor grado entre los dos polinomios
   // Este sera el numero de multiplicaciones que toca hacer por cada termino en el polinomio 
   unsigned int maxGradoIzq = this->size();
@@ -137,7 +135,7 @@ S Polinomio<S>::operator()( const S& x ) const
 {
   S resultado = S( 0 );
 
-  // TODO #3 Modificado por Juan Pablo 
+  // TODO #3
  for(size_t i = this->size(); i-- > 0;){
     resultado = resultado * x + (*this)[ i ];
   }
